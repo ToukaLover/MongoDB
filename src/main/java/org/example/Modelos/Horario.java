@@ -4,6 +4,7 @@ import org.bson.Document;
 
 import javax.print.Doc;
 import java.time.LocalTime;
+import java.time.ZoneId;
 import java.util.Locale;
 
 public class Horario {
@@ -25,12 +26,10 @@ public class Horario {
     }
 
     public static Horario fromDocument(Document document){
-
         return new Horario(
                 document.getString("dia"),
-                (LocalTime) document.get("hora")
+                document.getDate("hora").toInstant().atZone(ZoneId.systemDefault()).toLocalTime()
         );
-
     }
 
     public Horario(String dia, LocalTime hora) {

@@ -34,9 +34,9 @@ public class Main {
 
 //        programaDAO.insertar(programa1);
 
-        Programa programa = programaDAO.buscarPorID(1);
+        List<Programa> lista = programaDAO.buscarTodos();
 
-        System.out.println(programa.toString());
+        System.out.println(lista);
 
 
 

@@ -7,6 +7,7 @@ import org.example.Conexion.Conexion;
 import org.example.Modelos.Programa;
 
 import javax.print.Doc;
+import java.util.ArrayList;
 import java.util.List;
 
 public class ProgramaDAO implements org.example.DAO.ProgramaDAO {
@@ -38,7 +39,14 @@ public class ProgramaDAO implements org.example.DAO.ProgramaDAO {
 
     @Override
     public List<Programa> buscarTodos() {
-        return List.of();
+        List<Programa> lista = new ArrayList<>();
+
+        for (Document document : collection.find()){
+            Programa programa = Programa.fromDocument(document);
+            lista.add(programa);
+        }
+
+        return lista;
     }
 
     @Override

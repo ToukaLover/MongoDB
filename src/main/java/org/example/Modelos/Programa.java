@@ -3,6 +3,7 @@ package org.example.Modelos;
 import com.mongodb.event.ClusterListenerAdapter;
 import org.bson.Document;
 
+import javax.print.Doc;
 import javax.sound.sampled.AudioFileFormat;
 import java.util.List;
 
@@ -48,7 +49,9 @@ public class Programa {
 
         List<Audiencia> audiencia2 = ((List<Document>) document.get("audiencia")).stream().map(Audiencia::fromDoucment).toList();
 
-        Horario horario1 = Horario.fromDocument(document);
+        Document document1 = (Document) document.get("horario");
+
+        Horario horario1 = Horario.fromDocument(document1);
 
         return new Programa(
                 document.getInteger("id"),
