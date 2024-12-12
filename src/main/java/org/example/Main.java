@@ -1,6 +1,6 @@
 package org.example;
 
-import org.example.ClasesDAO.ProgramaDAO;
+import org.example.ClasesDAO.ProgramaDAOImpl;
 import org.example.Modelos.Audiencia;
 import org.example.Modelos.Colaborador;
 import org.example.Modelos.Horario;
@@ -28,15 +28,15 @@ public class Main {
 
         colaboradores.add(colaborador1);
 
-        Programa programa1 = new Programa(1, "yqs","yqs", horario1,audiencias,colaboradores );
+        Programa programa1 = new Programa(1, "yqsyqs","yqsjaja", horario1,audiencias,colaboradores );
 
-        ProgramaDAO programaDAO = new ProgramaDAO();
+        ProgramaDAOImpl programaDAO = new ProgramaDAOImpl();
 
 //        programaDAO.insertar(programa1);
 
-        List<Programa> lista = programaDAO.buscarTodos();
 
-        System.out.println(lista);
+
+
 
 
 

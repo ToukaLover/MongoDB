@@ -12,6 +12,6 @@ public interface ProgramaDAO {
     void actualizar(Programa programa);
     List<Programa> buscarPorCategoría(String categoria);
     Programa programaConMayorAudiencia(String fecha);
-    double calcularAudienciaMedia(String id,String fechaInicio,String fechaFin);
+    double calcularAudienciaMedia(int id,String fechaInicio,String fechaFin);
 
 }

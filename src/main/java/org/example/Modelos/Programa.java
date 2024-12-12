@@ -35,11 +35,11 @@ public class Programa {
 
     }
 
-    private List<Document> convertirAudiencia(){
+    public List<Document> convertirAudiencia(){
         return audiencia.stream().map(Audiencia::toDocument).toList();
     }
 
-    private List<Document> convertirColaboradores(){
+    public List<Document> convertirColaboradores(){
         return colaboradores.stream().map(Colaborador::toDocument).toList();
     }
 
